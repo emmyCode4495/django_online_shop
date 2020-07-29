@@ -13,8 +13,8 @@ def product_list(request, category_slug=None):
     return render(request,
                  'product/list.html',
                  {'category':category,
-                 'categories',categories,
-                 'products':'products'})
+                 'categories':categories,
+                 'products':products})
 
 # Function view to display a single product
 def product_detail(request, id, slug):
