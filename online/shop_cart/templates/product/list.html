@@ -1,12 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}
-{% if category %}
-    {{ category.name }}
-{% else %}
-    Products
-{% endif %}
+{% block title %}    
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -14,7 +10,7 @@
      <h3>Categories</h3>
      <ul>
          <li {% if not category %}class="selected"{% endif %}>
-             <a href="{% url "shop_cart:product_list" %}">All</a>
+             <a href="{% url 'shop_cart:product_list' %}">All</a>
          </li>
          {% for c in categories %}
          <li {% if category.slug == c.slug %} class="selected" {% endif %}>
