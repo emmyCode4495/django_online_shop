@@ -11,14 +11,17 @@
     <div id="header">
         <a href="/" class="logo">My Shop</a>
     </div>
+   {% if request.POST == 'cart:cart_add' %}
     <div id="subheader">
         <div class="cart">
             Your Cart is Empty
         </div>
     </div>
+    {% else %}
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
+   {% endif %} 
 </body>
 </html>
